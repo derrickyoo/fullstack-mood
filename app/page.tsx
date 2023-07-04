@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { auth } from "@clerk/nextjs";
 
-export default function Home() {
+async function HomePage() {
+  const { userId } = await auth();
+
   return (
     <div className="w-screen h-screen bg-black flex justify-center items-center text-white">
       <div className="w-full max-w-[600px] mx-auto">
@@ -9,7 +12,7 @@ export default function Home() {
           Built using the latest and greatest in Next.js Version 13
         </p>
         <div>
-          <Link href="/journal">
+          <Link href={!userId ? "/new-user" : "/journal"}>
             <button className="bg-pink-600 px-4 py-2 rounded-lg text-xl">
               Get started
             </button>
@@ -19,3 +22,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default HomePage;
