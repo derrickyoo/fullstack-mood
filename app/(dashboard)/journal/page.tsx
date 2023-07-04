@@ -12,9 +12,13 @@ async function getJournalEntries() {
       createdAt: "desc",
     },
   });
+
+  return entries;
 }
 
-function JournalPage() {
+async function JournalPage() {
+  const entries = await getJournalEntries();
+
   return <div>Journal page</div>;
 }
 
