@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pscale:dev": "pscale connect fullstack-mood dev --port 3309",
+    "prisma:format": "npx prisma format",
+    "prisma:db": "npx prisma db push",
+    "prisma:studio": "npx prisma studio"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.21.13",
