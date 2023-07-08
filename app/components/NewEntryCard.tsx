@@ -1,4 +1,8 @@
+"use client";
+
 function NewEntryCard() {
+  function handleOnClick() {}
+
   return (
     <div className="cursor-pointer overflow-hidden rounded-lg bg-white shadow">
       <div className="px-4 py-5 sm:p-6">
