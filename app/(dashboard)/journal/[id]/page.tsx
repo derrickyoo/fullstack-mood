@@ -26,7 +26,7 @@ async function JournalEntryPage({
   const entry = await getEntry(params.id);
 
   return (
-    <div>
+    <div className="w-full h-full">
       {params.id}
       <EntryEditor entry={entry} />
     </div>
