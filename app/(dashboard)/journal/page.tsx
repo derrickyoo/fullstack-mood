@@ -22,7 +22,7 @@ async function JournalPage() {
   const entries = await getJournalEntries();
 
   return (
-    <div className="p-8">
+    <div className="p-8 bg-zinc-400/10 h-full">
       <h2 className="text-3xl mb-8">Journal page</h2>
       <div className="grid grid-cols-3 gap-4">
         <NewEntryCard />
