@@ -13,6 +13,8 @@ function EntryEditor({ entry }) {
     // _value is the changed value (see how React does rendering and batching)
     // this guarantees the latest value
     onSave: async (_value) => {
+      setIsLoading(true);
+
       const updated = await updateEntry(entry.id, _value);
 
       setIsLoading(false);
