@@ -1,3 +1,5 @@
+import EntryEditor from "@/app/components/EntryEditor";
+
 function JournalEntryPage({
   params,
 }: {
@@ -5,7 +7,12 @@ function JournalEntryPage({
     id: string;
   };
 }) {
-  return <div>{params.id}</div>;
+  return (
+    <div>
+      {params.id}
+      <EntryEditor />
+    </div>
+  );
 }
 
 export default JournalEntryPage;
