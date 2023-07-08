@@ -1,7 +1,17 @@
 "use client";
 
+import { createNewEntry } from "@/utils/api";
+import { useRouter } from "next/navigation";
+
 function NewEntryCard() {
-  function handleOnClick() {}
+  const router = useRouter();
+
+  async function handleOnClick() {
+    const data = await createNewEntry();
+    // HTTP routes are basically a stack
+    // router.replace would be great for a modal as you would not want a user to hit back and go back to the modal
+    router.push(`/journal/${data.id}`);
+  }
 
   return (
     <div className="cursor-pointer overflow-hidden rounded-lg bg-white shadow">
