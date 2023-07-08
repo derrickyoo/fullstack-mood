@@ -12,7 +12,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
             <UserButton />
           </div>
         </header>
-        <div className="h-full">{children}</div>
+        <div className="h-[calc(100vh-60px)]">{children}</div>
       </div>
     </div>
   );
