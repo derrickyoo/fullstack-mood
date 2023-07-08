@@ -2,6 +2,7 @@ import EntryCard from "@/app/components/EntryCard";
 import NewEntryCard from "@/app/components/NewEntryCard";
 import getUserByClerkId from "@/utils/auth";
 import { prisma } from "@/utils/db";
+import Link from "next/link";
 
 async function getJournalEntries() {
   const user = await getUserByClerkId();
@@ -28,7 +29,9 @@ async function JournalPage() {
         <NewEntryCard />
 
         {entries.map((entry) => (
-          <EntryCard key={entry.id} entry={entry} />
+          <Link key={entry.id} href={`/journal/${entry.id}`}>
+            <EntryCard entry={entry} />
+          </Link>
         ))}
       </div>
     </div>
