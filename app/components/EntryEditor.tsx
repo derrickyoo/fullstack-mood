@@ -8,7 +8,7 @@ function EntryEditor({ entry }) {
   return (
     <div className="w-full h-full">
       <textarea
-        className="w-full h-full p-8 text-xl"
+        className="w-full h-full p-8 text-xl outline-none"
         value={value}
         onChange={(event) => setValue(event.target.value)}
       />
